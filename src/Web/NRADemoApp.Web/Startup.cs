@@ -33,7 +33,16 @@ namespace NRADemoApp.Web
                     options.UseSqlServer(
                         this.Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<NRADemoAppUser>()
+            services.AddDefaultIdentity<NRADemoAppUser>(
+                    options =>
+                    {
+                        options.Password.RequiredLength = 6;
+                        options.Password.RequireLowercase = false;
+                        options.Password.RequireNonAlphanumeric = false;
+                        options.Password.RequireUppercase = false;
+                        options.Password.RequireDigit = false;
+                    }
+                )
                 .AddEntityFrameworkStores<NRADemoAppContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

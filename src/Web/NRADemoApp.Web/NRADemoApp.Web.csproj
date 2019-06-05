@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+	<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <UserSecretsId>aspnet-NRADemoApp.Web-B4C2DD6C-E713-4B40-8AB0-17BF5475B42F</UserSecretsId>
   </PropertyGroup>
 
@@ -9,6 +10,11 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\NRADemoApp.Data.Models\NRADemoApp.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\NRADemoApp.Data\NRADemoApp.Data.csproj" />
   </ItemGroup>
 
 </Project>
